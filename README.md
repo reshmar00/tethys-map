@@ -1,2 +1,2 @@
 # tethys-map
-This is a simple web app which includes a map and a plot built using the Tethys Platform
+This is a simple web app which includes a map and a plot built using the [Tethys Platform](https://docs.tethysplatform.org/en/stable/)
