@@ -1,3 +1,5 @@
+/* Fetching GeoJSON and rendering polygons */
+
 document.addEventListener('DOMContentLoaded', function () {
     var map = L.map('map').setView([39.5, -111.5], 6);
 
