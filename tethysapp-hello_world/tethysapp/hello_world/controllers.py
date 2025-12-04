@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from tethys_sdk.layouts import MapLayout
 from tethys_sdk.routing import controller
 from .app import App
+from django.shortcuts import render
 
 
 @controller(name="home", app_workspace=True)
@@ -28,3 +29,10 @@ def serve_geojson(request):
     with open(GEOJSON_PATH, 'r') as f:
         data = json.load(f)
     return JsonResponse(data)
+
+@controller(name="map")
+def map_page(request):
+    """
+    Renders the dedicated map page template.
+    """
+    return render(request, 'hello_world/map.html')

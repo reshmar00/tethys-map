@@ -1,0 +1,19 @@
+{% extends tethys_app.package|add:"/base.html" %}
+{% load tethys %}
+
+{% block app_content %}
+  <div class="container my-4">
+    <h1>Utah Water Use Map</h1>
+    <p>Visualizing Utah water-related land use by county.</p>
+
+    <!-- Map Container -->
+    <div id="map" style="width: 100%; height: 600px;"></div>
+  </div>
+{% endblock %}
+
+{% block after_app_content %}
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="{% static 'hello_world/js/main.js' %}"></script>
+{% endblock %}

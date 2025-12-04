@@ -32,5 +32,10 @@ def url_maps(self):
             url='hello-world/geojson',
             controller='hello_world.controllers.serve_geojson'
         ),
+        UrlMap(
+            name='map',
+            url='hello-world/map',
+            controller='hello_world.controllers.map_page'
+        ),
     )
     return url_maps
