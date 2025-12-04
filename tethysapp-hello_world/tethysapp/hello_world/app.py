@@ -1,4 +1,5 @@
 from tethys_sdk.base import TethysAppBase
+from tethys_sdk.base import url_map_maker
 
 
 class App(TethysAppBase):
@@ -15,3 +16,21 @@ class App(TethysAppBase):
     tags = ''
     enable_feedback = False
     feedback_emails = []
+
+# ---- Adding new URL map for the endpoint ----
+
+def url_maps(self):
+    UrlMap = url_map_maker(self.root_url)
+    url_maps = (
+        UrlMap(
+            name='home',
+            url='hello-world',
+            controller='hello_world.controllers.MapLayoutTutorialMap'
+        ),
+        UrlMap(
+            name='geojson',
+            url='hello-world/geojson',
+            controller='hello_world.controllers.serve_geojson'
+        ),
+    )
+    return url_maps
